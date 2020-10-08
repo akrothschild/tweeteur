@@ -2,7 +2,7 @@
   <div class="home">
     <h1>Home</h1>
     <div class="users-list">
-      <router-link v-for="user in users" :to="{ name: 'UserProfile', params: { userId: user.id } }" :key="user.id">
+      <router-link class="users-list-id" v-for="user in users" :to="{ name: 'UserProfile', params: { userId: user.id } }" :key="user.id">
         {{ user.username }}
       </router-link>
     </div>
@@ -29,6 +29,17 @@ export default {
   .users-list {
     display: flex;
     flex-direction: column;
+    font-size: 150%;
+    line-height: 3rem;
+
+   .users-list-id {
+     &:hover {
+      transform: scale3d(1.005, 1.005, 1.005);
+      font-weight: bold;
+     }
+   } 
+
+    
   }
 }
 </style>
